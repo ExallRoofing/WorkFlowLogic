@@ -1,28 +1,29 @@
 <?php
+
 namespace Deployer;
 
 require 'recipe/laravel.php';
 
-// Config
+// -----------------------------------------------------------------------------
+// CONFIG
+// -----------------------------------------------------------------------------
+
 set('application', 'workflowlogic');
 set('repository', 'https://github.com/ExallRoofing/WorkFlowLogic.git');
+set('git_tty', true);
+set('keep_releases', 5);
 
-// Shared dirs/files
-add('shared_dirs', [
-    'storage',
-    'bootstrap/cache'
-]);
-add('shared_files', [
-    '.env'
-]);
+// Shared files/dirs
+add('shared_files', ['.env']);
+add('shared_dirs', ['storage']);
 
-// Writable dirs
-add('writable_dirs', [
-    'storage',
-    'bootstrap/cache',
-]);
+// Writable
+add('writable_dirs', ['storage']);
 
-// Hosts
+// -----------------------------------------------------------------------------
+// HOST
+// -----------------------------------------------------------------------------
+
 host('production')
     ->setHostname('ec2-52-30-37-26.eu-west-1.compute.amazonaws.com')
     ->set('remote_user', 'ubuntu')
@@ -30,22 +31,48 @@ host('production')
     ->set('branch', 'main')
     ->set('deploy_path', '/var/www/workflowlogic.co.uk');
 
-// Tasks
-desc('Build assets locally and upload');
-task('build:assets', function () {
-    runLocally('npm install');
-    runLocally('npm run build');
+// -----------------------------------------------------------------------------
+// FRONTEND BUILD (server-side Vite)
+// -----------------------------------------------------------------------------
 
-    upload('public/build/', '{{release_path}}/public/build/');
-});
+task('build:frontend', function () {
+    run('cd {{ release_path }} && npm install');
+    run('cd {{ release_path }} && npm run build');
+})->desc('Build Vite assets on server');
 
-before('deploy:symlink', 'artisan:config:cache');
-after('deploy:failed', 'deploy:unlock');
+after('deploy:vendors', 'build:frontend');
 
-// Optional: clear statamic caches after deploy
+// -----------------------------------------------------------------------------
+// STATAMIC & LARAVEL OPTIMISATIONS
+// -----------------------------------------------------------------------------
+
 task('statamic:clear', function () {
     run('{{bin/php}} {{release_path}}/artisan statamic:stache:clear');
+    run('{{bin/php}} {{release_path}}/artisan statamic:stache:warm');
+    run('{{bin/php}} {{release_path}}/artisan optimize:clear');
 });
 
-// Hooks
+// -----------------------------------------------------------------------------
+// PERMISSIONS
+// -----------------------------------------------------------------------------
+
+task('fix:permissions', function () {
+    run('sudo chown -R ubuntu:www-data {{deploy_path}}');
+    run('sudo chmod -R 775 {{deploy_path}}');
+});
+
+after('deploy:symlink', 'fix:permissions');
+
+// -----------------------------------------------------------------------------
+// LARAVEL OPTIMISE & CACHE
+// -----------------------------------------------------------------------------
+
+after('deploy:symlink', 'artisan:config:cache');
+after('deploy:symlink', 'artisan:route:cache');
+after('deploy:symlink', 'statamic:clear');
+
+// -----------------------------------------------------------------------------
+// FAILURE HANDLING
+// -----------------------------------------------------------------------------
+
 after('deploy:failed', 'deploy:unlock');
