@@ -11,7 +11,7 @@ require 'recipe/laravel.php';
 set('application', 'workflowlogic');
 set('repository', 'https://github.com/ExallRoofing/WorkFlowLogic.git');
 set('git_tty', true);
-set('keep_releases', 5);
+set('keep_releases', 3);
 
 // Shared files/dirs
 add('shared_files', ['.env']);
