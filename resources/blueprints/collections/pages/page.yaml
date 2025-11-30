@@ -3,6 +3,7 @@ tabs:
     display: Main
     sections:
       -
+        display: General
         fields:
           -
             handle: title
@@ -11,21 +12,49 @@ tabs:
               required: true
               validate:
                 - required
+              display: Title
           -
             handle: meta_description
             field:
               type: textarea
               display: 'Meta Description'
           -
-            handle: content
-            field:
-              type: markdown
-              localizable: true
-          -
             handle: template
             field:
               type: template
               display: Template
+      -
+        display: Hero
+        fields:
+          -
+            handle: hero_title
+            field:
+              type: text
+              display: 'Hero Title'
+          -
+            handle: hero_sub_heading
+            field:
+              type: text
+              display: 'Hero Sub Heading'
+          -
+            handle: hero_cta_button_text
+            field:
+              type: text
+              display: 'Hero CTA Button Text'
+          -
+            handle: hero_image
+            field:
+              container: hero_images
+              type: assets
+              display: 'Hero Image'
+      -
+        display: 'What We Automate'
+        fields:
+          -
+            handle: what_we_automate
+            field:
+              type: collections
+              display: 'What We Automate'
   sidebar:
     display: Sidebar
     sections:
@@ -37,4 +66,13 @@ tabs:
               type: slug
               localizable: true
               validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true
 title: Page

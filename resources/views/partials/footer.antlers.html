@@ -1,0 +1,136 @@
+</div>
+
+<footer class="bg-brandBlue text-white mt-20 relative overflow-hidden">
+
+    <!-- Radial Spotlight Behind Logo -->
+    <div class="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl opacity-40"></div>
+
+    <div class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-16 relative z-10">
+
+        <!-- Logo / About -->
+        <div>
+            <div class="flex items-center gap-3 mb-5">
+
+                <!-- Glassy Icon -->
+                <div class="w-10 h-10 flex items-center justify-center
+                            bg-white/20 backdrop-blur-sm border border-white/30
+                            rounded-xl shadow-md">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                         stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path d="M4 6l8 6-8 6"></path>
+                        <line x1="14" y1="18" x2="20" y2="18"></line>
+                    </svg>
+                </div>
+
+                <!-- Glassy White Logo Text -->
+                <span class="text-2xl font-extrabold bg-gradient-to-r
+                             from-white via-white/85 to-white/60
+                             bg-clip-text text-transparent tracking-tight">
+                    WorkFlowLogic
+                </span>
+            </div>
+
+            <p class="text-sm leading-relaxed text-blue-100">
+                Automating business workflows with Zapier, APIs and custom integrations.
+                Save time. Reduce errors. Scale faster.
+            </p>
+        </div>
+
+        <!-- Navigation -->
+        <div>
+            <h4 class="text-lg font-semibold mb-4 text-white">Navigate</h4>
+            <ul class="space-y-3 text-blue-100 text-sm">
+                <li><a href="/" class="hover:text-white transition">Home</a></li>
+                <li><a href="#how-we-work" class="hover:text-white transition">How We Work</a></li>
+                <li><a href="#what-we-automate" class="hover:text-white transition">What We Automate</a></li>
+                <li>
+                    <a href="#" data-cal-config='{"layout":"month_view"}' data-cal-namespace="30min" data-cal-link="workflowlogic/30min"
+                       class="inline-block bg-white text-brandBlue font-semibold px-4 py-2 rounded-md hover:bg-blue-50 transition text-sm">
+                        Book a Free Expert Call
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Tools We Work With -->
+        <div>
+            <h4 class="text-lg font-semibold mb-4 text-white">Tools We Work With</h4>
+
+            <div class="grid grid-cols-5 gap-4">
+
+                <img src="/storage/icons/zapier.svg"
+                     alt="Zapier"
+                     class="h-8 opacity-60 hover:opacity-100 transition logo-white">
+
+                <img src="/storage/icons/quickbooks.svg"
+                     alt="Quickbooks"
+                     class="h-8 opacity-60 hover:opacity-100 transition logo-white">
+
+                <img src="/storage/icons/xero.svg"
+                     alt="Xero"
+                     class="h-8 opacity-60 hover:opacity-100 transition logo-white">
+
+                <img src="/storage/icons/hubspot.svg"
+                     alt="HubSpot"
+                     class="h-8 opacity-60 hover:opacity-100 transition logo-white">
+
+                <img src="/storage/icons/stripe.svg"
+                     alt="Stripe"
+                     class="h-8 opacity-60 hover:opacity-100 transition logo-white">
+
+            </div>
+        </div>
+
+        <!-- Contact + Social -->
+        <div>
+            <h4 class="text-lg font-semibold mb-4 text-white">Contact</h4>
+
+            <ul class="space-y-3 text-blue-100 text-sm mb-6">
+
+                <!-- Email -->
+                <li class="flex items-center gap-3 hover:text-white transition">
+                    <a href="mailto:help@workflowlogic.co.uk" class="flex items-center gap-3">
+                        <img src="/storage/icons/email-icon.svg" class="w-5 h-5" alt="Email icon">
+                        help@workflowlogic.co.uk
+                    </a>
+                </li>
+                <!-- Phone -->
+                <!--<li class="flex items-center gap-3 hover:text-white transition">
+                    <img src="/storage/icons/phone-icon.svg" class="w-5 h-5" alt="icon">
+                    0800 000 000
+                </li>-->
+
+            </ul>
+
+            <h4 class="text-lg font-semibold mb-4 text-white">Follow Us</h4>
+
+            <div class="flex items-center gap-5">
+
+                <!-- Instagram -->
+                <a href="#" class="p-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl hover:bg-white/30 transition group">
+                    <img src="/storage/icons/instagram.svg" class="w-6 h-6 logo-white" alt="icon">
+                </a>
+
+                <!-- Facebook -->
+                <a href="#" class="p-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl hover:bg-white/30 transition group">
+                    <img src="/storage/icons/facebook.svg" class="w-6 h-6 logo-white" alt="icon">
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-white/20 mt-10 py-4">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between text-sm text-blue-100">
+            <p>{{ company_info:copyright }}</p>
+        </div>
+    </div>
+</footer>
+
+{{ partial:calendar }}
+{{ partial:terms }}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</body>
+</html>

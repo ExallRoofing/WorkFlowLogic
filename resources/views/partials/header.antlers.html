@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    {{ vite src="resources/css/app.css" }}
+    {{ vite src="resources/js/app.js" }}
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=space-grotesk:300,400,500,600,700&display=swap" rel="stylesheet">
+</head>
+
+<body x-data="{ termsOpen: false }" class="bg-gray-50 text-gray-800 antialiased font-sans">
+
+<!-- Navigation (your original header stays the same) -->
+{{ partial:nav }}
+
+<!-- FULLSCREEN HERO + TRUST WRAPPER -->
+<div class="w-full min-h-screen flex flex-col">
+
+    <!-- HERO (fills remaining height) -->
+    <div class="relative w-full flex-grow bg-cover bg-center pt-48 md:pt-48" style="background-image: url('/storage/bg.png');">
+        <!-- HERO CONTENT -->
+        <div class="relative w-full h-full flex items-center justify-center">
+            <div class="relative z-20 text-center px-6 max-w-4xl">
+
+                <!-- Soft Glass Highlight Behind Text -->
+                <div class="absolute -inset-x-6 -inset-y-4 md:-inset-x-12 md:-inset-y-6 bg-white/5 backdrop-blur-sm rounded-3xl shadow-lg pointer-events-none"></div>
+
+                <!-- Foreground Content -->
+                <div class="relative">
+
+                    <h1 class="text-white font-extrabold text-4xl md:text-6xl leading-tight mb-6 drop-shadow-xl">
+                        {{ hero_title }}
+                    </h1>
+
+                    <p class="text-white/90 text-lg md:text-2xl leading-relaxed mb-10 drop-shadow">
+                        {{ hero_sub_heading }}
+                    </p>
+
+                    <a href="#"
+                       data-cal-config='{"layout":"month_view"}'
+                       data-cal-namespace="30min"
+                       data-cal-link="workflowlogic/30min"
+                       class="inline-block bg-blue-600 hover:bg-blue-700
+                  text-white text-lg font-semibold py-4 px-10
+                  rounded-xl shadow-xl transition-all
+                  backdrop-blur-sm bg-blue-600/90">
+                        {{ hero_cta_button_text }}
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- TRUST BAR (fixed height at bottom of full screen) -->
+    <div class="w-full bg-white py-6 shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
+
+            <p class="text-gray-600 text-sm uppercase tracking-wide font-semibold">
+                Trusted by businesses using:
+            </p>
+
+            <div class="flex items-center gap-18 opacity-80">
+                <img src="/storage/icons/hubspot.svg" class="h-6 md:h-10 logo-grey">
+                <img src="/storage/icons/instagram.svg" class="h-6 md:h-10 logo-grey">
+                <img src="/storage/icons/facebook.svg" class="h-6 md:h-10 logo-grey">
+                <img src="/storage/icons/quickbooks.svg" class="h-6 md:h-10 logo-grey">
+                <img src="/storage/icons/stripe.svg" class="h-6 md:h-10 logo-grey">
+                <img src="/storage/icons/xero.svg" class="h-6 md:h-10 logo-grey">
+                <img src="/storage/icons/zapier.svg" class="h-6 md:h-10 logo-grey">
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Main Content Wrapper -->
+<div class="max-w-7xl mx-auto px-6 py-12 space-y-8">

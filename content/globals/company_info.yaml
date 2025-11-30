@@ -1,0 +1,167 @@
+title: 'Company Info'
+data:
+  copyright: '© 2026 WorkFlowLogic Limited. All rights reserved.'
+  phone_number: '0800 1112222'
+  email_address: help@workflowlogic.co.uk
+  terms: |-
+    WorkflowLogic – Terms & Conditions
+
+    Last updated: {{ date }}
+
+    Welcome to WorkflowLogic. By accessing or using our website or services, you agree to these Terms & Conditions.  If you do not agree, please do not use our site or services.
+
+    **About Us**
+
+
+    WorkflowLogic Limited (“we”, “us”, “our”) provides workflow automation services, including but not limited to:
+
+    - Zapier automation setup
+    - API integrations
+    - System-to-system automation
+    - Workflow audits & consultancy
+    - Custom automation builds
+
+    Our website address is: https://www.workflowlogic.co.uk
+
+    **Use of Our Website**
+    You agree to:
+
+    - Use the website only for lawful purposes
+    - Not attempt to access restricted areas or cause harm to the system
+    - Not copy, distribute, or modify website content without permission
+    - We may update or remove content at any time without notice.
+
+    **Our Services**
+    We provide automation consultancy and technical implementation services.
+    All services are delivered based on the scope agreed before work begins.
+
+    Service delivery includes:
+
+    Automation planning
+
+    Build & implementation
+
+    Testing
+
+    Documentation (if agreed)
+
+    Support (if included in your package)
+
+    We may decline work if a project falls outside our technical or operational scope.
+
+    4. Quotes & Payments
+
+    Quotes are valid for 30 days unless otherwise stated.
+
+    Work begins only after written approval (email is acceptable).
+
+    Payments must be made on the terms agreed (e.g., upfront, milestone-based, or monthly).
+
+    Late payments may result in paused services.
+
+    All prices are in GBP unless agreed otherwise.
+
+    5. Client Responsibilities
+
+    To deliver the project, you agree to:
+
+    Provide accurate and complete information
+
+    Grant necessary access permissions to tools, accounts, and systems
+
+    Respond to queries within reasonable timeframes
+
+    Comply with platform terms (Zapier, HubSpot, Xero, etc.)
+
+    We are not responsible for delays caused by missing information or restricted access.
+
+    6. Third-Party Platforms
+
+    Many workflows rely on external systems including Zapier, Make, HubSpot, Stripe, Xero, and others.
+
+    You acknowledge:
+
+    We are not responsible for outages or issues caused by third-party platforms
+
+    You must maintain valid licences or subscriptions where required
+
+    Changes to third-party APIs may impact your workflow over time
+
+    We will always advise you if something outside our control affects your automation.
+
+    7. Data & Privacy
+
+    We take data security seriously.
+
+    We only access client data where necessary to deliver the service
+
+    We do not store your credentials — we use platform-approved authentication
+
+    We never sell or share data with third parties
+
+    See our Privacy Policy for full details (I can write this too if needed).
+
+    8. Intellectual Property
+
+    You retain ownership of:
+
+    Your data
+
+    Your accounts
+
+    Your connected tools
+
+    We retain ownership of:
+
+    Any reusable internal tools, scripts, or libraries
+
+    General automation frameworks
+
+    You receive a licence to use the automation we build for your business.
+
+    9. Limitation of Liability
+
+    We are not liable for:
+
+    Losses caused by third-party platform failures
+
+    Loss of revenue, profits, or data
+
+    Misuse or misconfiguration of systems outside our control
+
+    Our liability is limited to the total amount paid for the service in the previous 12 months.
+
+    10. Cancellation & Refunds
+
+    You may cancel before work begins for a full refund.
+    Once work has started, refunds are not generally available but may be considered case-by-case.
+
+    Ongoing retainers or support packages can be cancelled with 30 days’ notice.
+
+    11. Termination
+
+    We may suspend or terminate work if:
+
+    Payment terms are not met
+
+    Access is removed
+
+    There is misuse of systems
+
+    Illegal or unethical activity is identified
+
+    We always provide written notice before termination unless urgent.
+
+    12. Changes to These Terms
+
+    We may update these Terms from time to time.
+    The latest version will always be posted on our website.
+
+    13. Contact Us
+
+    For any questions regarding these Terms:
+
+    📧 help@workflowlogic.co.uk
+
+
+    📞 0800 111 2222

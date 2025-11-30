@@ -1,0 +1,100 @@
+<!-- Navigation -->
+<header
+    x-data="{ open:false, scrolled:false }"
+    @scroll.window="scrolled = (window.pageYOffset > 10)"
+    :class="[
+        'fixed top-0 left-0 w-full z-9999',
+        open ? 'transition-none' : 'transition-all duration-300',
+        scrolled && !open
+            ? 'backdrop-blur bg-gradient-to-r from-black/95 from-30% via-brandBlue/80 via-60% to-brandBlue/70 to-100% shadow-lg'
+            : 'bg-transparent border-b-0 shadow-none'
+    ]">
+
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+
+            <!-- Icon -->
+            <div class="w-8 h-8 flex items-center justify-center bg-brandBlue rounded-lg">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                     stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M4 6l8 6-8 6"></path>
+                    <line x1="14" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </div>
+
+            <!-- Gradient Text Logo -->
+            <span class="text-2xl font-bold bg-gradient-to-r from-white to-brandBlue bg-clip-text text-transparent">
+                WorkFlowLogic
+            </span>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:block">
+            <ul class="flex items-center gap-8 text-lg transition-colors duration-300"
+                :class="scrolled ? 'text-white' : 'text-white'">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="#how-we-work" class="nav-link">How We Work</a></li>
+                <li><a href="#what-we-automate" class="nav-link">What We Automate</a></li>
+                <li><a href="#contact" class="nav-link">Send Us a Message</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hamburger (animated) -->
+        <button @click="open = !open"
+                class="md:hidden relative w-8 h-8 flex items-center justify-center z-50">
+
+            <!-- Line 1 -->
+            <span class="absolute block w-8 h-1 bg-white rounded origin-center transition-all duration-300"
+                  :class="open ? 'rotate-45 top-4' : 'top-1'"></span>
+
+            <!-- Line 2 -->
+            <span class="absolute block w-8 h-1 bg-white rounded origin-center transition-all duration-300"
+                  :class="open ? 'opacity-0' : 'top-4'"></span>
+
+            <!-- Line 3 -->
+            <span class="absolute block w-8 h-1 bg-white rounded origin-center transition-all duration-300"
+                  :class="open ? '-rotate-45 top-4' : 'top-7'"></span>
+        </button>
+
+
+    </div>
+
+    <!-- Sliding Drawer (independent from header) -->
+    <div
+        class="fixed top-0 right-0 h-full w-72
+           bg-white/90 backdrop-blur-xl border-l border-white/20
+           text-gray-900 pt-24 px-7 shadow-[0_0_40px_rgba(0,0,0,0.25)]
+           transform transition-transform duration-300 z-[90]"
+        :class="open ? 'translate-x-0' : 'translate-x-full'">
+
+        <ul class="space-y-7 text-lg font-semibold">
+            <li><a @click="open=false" href="/" class="block hover:text-blue-600 transition">Home</a></li>
+            <li><a @click="open=false" href="#how-we-work" class="block hover:text-blue-600 transition">How We Work</a></li>
+            <li><a @click="open=false" href="#what-we-automate" class="block hover:text-blue-600 transition">What We Automate</a></li>
+            <li><a @click="open=false" href="#contact" class="block hover:text-blue-600 transition">Send Us a Message</a></li>
+        </ul>
+
+        <div class="mt-12">
+            <a href="#"
+               data-cal-config='{"layout":"month_view"}'
+               data-cal-namespace="30min"
+               data-cal-link="workflowlogic/30min"
+               class="block text-center bg-blue-600 hover:bg-blue-700
+                  text-white py-3 px-6 rounded-xl shadow-lg
+                  text-lg font-bold transition">
+                Book a Call
+            </a>
+        </div>
+    </div>
+
+    <!-- Backdrop -->
+    <div
+        x-show="open"
+        @click="open=false"
+        x-transition.opacity
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm md:hidden z-[80]">
+    </div>
+
+</header>
