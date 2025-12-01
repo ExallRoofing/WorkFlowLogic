@@ -4,8 +4,8 @@ blueprint: page
 title: Home
 template: home
 updated_by: 1
-updated_at: 1764521982
-hero_title: 'Automate Your Business.  Unlock Your Time.'
+updated_at: 1764566900
+hero_title: 'Automate Your Business.  Save Hours Every Week.'
 hero_sub_heading: 'We build workflows and systems that run your business automatically, 24/7.'
 hero_cta_button_text: 'Book a Free Expert Call'
 what_we_automate:
