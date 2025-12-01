@@ -10,7 +10,7 @@
     <link href="https://fonts.bunny.net/css?family=space-grotesk:300,400,500,600,700&display=swap" rel="stylesheet">
 </head>
 
-<body x-data="{ termsOpen: false }" class="bg-gray-50 text-gray-800 antialiased font-sans">
+<body x-data="{ termsOpen: false }" class="bg-gray-50 text-gray-800 antialiased font-sans overflow-x-hidden">
 
 <!-- Navigation (your original header stays the same) -->
 {{ partial:nav }}
@@ -25,7 +25,7 @@
             <div class="relative z-20 text-center px-6 max-w-4xl">
 
                 <!-- Soft Glass Highlight Behind Text -->
-                <div class="absolute -inset-x-6 -inset-y-4 md:-inset-x-12 md:-inset-y-6 bg-white/5 backdrop-blur-sm rounded-3xl shadow-lg pointer-events-none"></div>
+                <div class="absolute -inset-x-2 -inset-y-3 md:-inset-x-12 md:-inset-y-6 bg-white/5 backdrop-blur-sm rounded-3xl shadow-lg pointer-events-none"></div>
 
                 <!-- Foreground Content -->
                 <div class="relative">
@@ -64,7 +64,7 @@
                 Trusted by businesses using:
             </p>
 
-            <div class="flex items-center gap-18 opacity-80">
+            <div class="flex items-center gap-6 md:gap-18 opacity-80">
                 <img src="/storage/icons/hubspot.svg" class="h-6 md:h-10 logo-grey">
                 <img src="/storage/icons/instagram.svg" class="h-6 md:h-10 logo-grey">
                 <img src="/storage/icons/facebook.svg" class="h-6 md:h-10 logo-grey">
