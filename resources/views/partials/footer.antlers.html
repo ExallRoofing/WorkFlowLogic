@@ -46,7 +46,7 @@
                 <li>
                     <a href="#" data-cal-config='{"layout":"month_view"}' data-cal-namespace="30min" data-cal-link="workflowlogic/30min"
                        class="inline-block bg-white text-brandBlue font-semibold px-4 py-2 rounded-md hover:bg-blue-50 transition text-sm">
-                        Book a Free Expert Call
+                        Schedule a Free Consultation
                     </a>
                 </li>
             </ul>
@@ -130,6 +130,25 @@
 </footer>
 
 {{ partial:calendar }}
+<script>
+    window.Cal = window.Cal || function() {
+        (window.Cal.q = window.Cal.q || []).push(arguments);
+    };
+
+    // Listener for booking successful
+    window.Cal("on", {
+        action: "bookingSuccessful",
+        callback: function (payload) {
+            console.log("CAL BOOKING SUCCESS FIRED:", payload);
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: "cal_booking_success",
+                bookingId: payload.data.booking.id
+            });
+        }
+    });
+</script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
