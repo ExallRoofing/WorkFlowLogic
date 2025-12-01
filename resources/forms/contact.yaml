@@ -1,1 +1,7 @@
 title: Contact
+email:
+  -
+    id: mimt128o
+    to: bradley@workflowlogic.co.uk
+    subject: 'New Enquiry'
+    mailer: smtp

@@ -6,12 +6,20 @@ document.getElementById("contactForm").addEventListener("submit", async function
     const form = this;
     const formMessage = document.getElementById("formMessage");
     const formErrors = document.getElementById("formErrors");
+    const submitBtn = document.getElementById("submitBtn");
+    const btnText = submitBtn.querySelector(".btn-text");
+    const loader = submitBtn.querySelector(".loader");
 
-    // Reset UI
+    // Reset UI errors
     formMessage.textContent = "";
     formErrors.innerHTML = "";
     form.querySelectorAll(".error").forEach(el => el.classList.remove("border-red-500"));
     form.querySelectorAll(".error-text").forEach(el => el.remove());
+
+    // 🔵 Show loader
+    submitBtn.disabled = true;
+    loader.classList.remove("hidden");
+    btnText.classList.add("invisible"); // <-- not hidden; keeps layout stable
 
     const response = await fetch(form.action, {
         method: "POST",
@@ -24,30 +32,41 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
     const data = await response.json();
 
+    // 🟢 Success
     if (data.success) {
         formMessage.textContent = "Message sent successfully!";
         form.reset();
+
+        // Reset button
+        submitBtn.disabled = false;
+        loader.classList.add("hidden");
+        btnText.classList.remove("invisible");
+
         return;
     }
 
-    // ----- NEW: handle Statamic's error format -----
-    // Field-specific errors
+    // 🔴 Field errors
     if (data.error && typeof data.error === "object") {
         Object.entries(data.error).forEach(([field, message]) => {
             const input = document.getElementById(field);
             if (!input) return;
 
-            // Highlight field
             input.classList.add("border-red-500", "error");
 
-            // Inline error message
             const errorText = document.createElement("div");
             errorText.className = "text-red-600 text-sm mt-1 error-text";
             errorText.textContent = message;
             input.insertAdjacentElement("afterend", errorText);
         });
     }
+
+    // Reset button on errors
+    submitBtn.disabled = false;
+    loader.classList.add("hidden");
+    btnText.classList.remove("invisible");
 });
+
+
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
