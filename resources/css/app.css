@@ -35,6 +35,3 @@
 .logo-white {
     filter: brightness(0) invert(1);
 }
-.translate-z-0 {
-    transform: translateZ(0);
-}
