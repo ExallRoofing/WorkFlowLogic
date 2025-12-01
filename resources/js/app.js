@@ -66,8 +66,6 @@ document.getElementById("contactForm").addEventListener("submit", async function
     btnText.classList.remove("invisible");
 });
 
-
-
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
         const href = this.getAttribute("href");
