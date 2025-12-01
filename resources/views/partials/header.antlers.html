@@ -20,7 +20,11 @@
 
     <!-- HERO (fills remaining height) -->
     <div class="relative w-full flex-grow bg-cover bg-center pt-48 md:pt-48" style="background-image: url('/storage/bg.png');">
-        <!-- HERO CONTENT -->
+
+        <!-- Stars overlay -->
+        {{ partial:stars }}
+
+        <!-- HERO CONTENT (keep your existing content) -->
         <div class="relative w-full h-full flex items-center justify-center">
             <div class="relative z-20 text-center px-6 max-w-4xl">
 
@@ -43,16 +47,15 @@
                        data-cal-namespace="30min"
                        data-cal-link="workflowlogic/30min"
                        class="inline-block bg-blue-600 hover:bg-blue-700
-                  text-white text-lg font-semibold py-4 px-10
-                  rounded-xl shadow-xl transition-all
-                  backdrop-blur-sm bg-blue-600/90">
+              text-white text-lg font-semibold py-4 px-10
+              rounded-xl shadow-xl transition-all
+              backdrop-blur-sm bg-blue-600/90">
                         {{ hero_cta_button_text }}
                     </a>
 
                 </div>
 
             </div>
-
         </div>
     </div>
 
