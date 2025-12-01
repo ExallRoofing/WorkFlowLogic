@@ -52,6 +52,13 @@ task('statamic:clear', function () {
     run('{{bin/php}} {{release_path}}/artisan optimize:clear');
 });
 
+desc('Sync local storage/app/public to server');
+task('sync:storage', function () {
+    upload('storage/app/public/', '{{deploy_path}}/shared/storage/app/public');
+});
+
+before('deploy:symlink', 'sync:storage');
+
 // -----------------------------------------------------------------------------
 // PERMISSIONS
 // -----------------------------------------------------------------------------
