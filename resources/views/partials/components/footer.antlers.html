@@ -1,5 +1,8 @@
 </div>
 
+<!-- Floating Button (Bottom Center) -->
+{{ partial:components.floating_book_button }}
+
 <footer class="bg-brandBlue text-white mt-20 relative overflow-hidden">
 
     <!-- Radial Spotlight Behind Logo -->
@@ -52,34 +55,43 @@
             </ul>
         </div>
 
-        <!-- Tools We Work With -->
+        <!-- Industries We Serve -->
         <div>
-            <h4 class="text-lg font-semibold mb-4 text-white">Tools We Work With</h4>
+            <h4 class="text-lg font-semibold mb-4 text-white">Industries We Serve</h4>
 
-            <div class="flex items-center gap-6">
+            <ul class="space-y-3 text-blue-100 text-sm">
+                <li>
+                    <a href="/facility-management-automation" class="hover:text-white transition">
+                        Facility Management
+                    </a>
+                </li>
 
-                <img src="/storage/icons/zapier.svg"
-                     alt="Zapier"
-                     class="h-8 opacity-60 hover:opacity-100 transition logo-white">
+                <li>
+                    <a href="/property-maintenance-automation" class="hover:text-white transition">
+                        Property Maintenance
+                    </a>
+                </li>
 
-                <img src="/storage/icons/quickbooks.svg"
-                     alt="Quickbooks"
-                     class="h-8 opacity-60 hover:opacity-100 transition logo-white">
+                <li>
+                    <a href="/cleaning-company-automation" class="hover:text-white transition">
+                        Cleaning Companies
+                    </a>
+                </li>
 
-                <img src="/storage/icons/xero.svg"
-                     alt="Xero"
-                     class="h-8 opacity-60 hover:opacity-100 transition logo-white">
+                <li>
+                    <a href="/trades-automation" class="hover:text-white transition">
+                        Trades & Contractors
+                    </a>
+                </li>
 
-                <img src="/storage/icons/hubspot.svg"
-                     alt="HubSpot"
-                     class="h-8 opacity-60 hover:opacity-100 transition logo-white">
-
-                <img src="/storage/icons/stripe.svg"
-                     alt="Stripe"
-                     class="h-8 opacity-60 hover:opacity-100 transition logo-white">
-
-            </div>
+                <li>
+                    <a href="/professional-services-automation" class="hover:text-white transition">
+                        Professional Services
+                    </a>
+                </li>
+            </ul>
         </div>
+
 
         <!-- Contact + Social -->
         <div>
@@ -129,26 +141,9 @@
     </div>
 </footer>
 
-{{ partial:calendar }}
-<script>
-    window.Cal = window.Cal || function() {
-        (window.Cal.q = window.Cal.q || []).push(arguments);
-    };
+<!-- Include calendar on all pages -->
+{{ partial:components.calendar }}
 
-    // Listener for booking successful
-    window.Cal("on", {
-        action: "bookingSuccessful",
-        callback: function (payload) {
-            console.log("CAL BOOKING SUCCESS FIRED:", payload);
-
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                event: "cal_booking_success",
-                bookingId: payload.data.booking.id
-            });
-        }
-    });
-</script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>

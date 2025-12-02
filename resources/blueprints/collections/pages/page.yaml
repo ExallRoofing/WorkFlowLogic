@@ -42,11 +42,17 @@ tabs:
               type: text
               display: 'Hero CTA Button Text'
           -
+            handle: secondary_cta_button_text
+            field:
+              type: text
+              display: 'Secondary CTA Button Text'
+          -
             handle: hero_image
             field:
               container: hero_images
               type: assets
               display: 'Hero Image'
+              max_files: 1
       -
         display: 'What We Automate'
         fields:

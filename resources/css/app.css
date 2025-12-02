@@ -5,6 +5,100 @@
     --font-sans: "Space Grotesk", system-ui, sans-serif;
 }
 
+@layer utilities {
+    .text-gradient-brand {
+        @apply font-extrabold bg-gradient-to-r from-black from-5% via-[#135DFC] via-60% to-[#4c7dff] to-95% bg-clip-text text-transparent;
+    }
+
+    .btn-primary {
+        @apply relative inline-flex items-center justify-center gap-2
+        px-6 py-3 text-base md:text-lg font-bold text-white
+        bg-gradient-to-r from-blue-600 to-blue-500
+        rounded-xl shadow-[0_0_20px_rgba(37,99,235,0.4)]
+        hover:shadow-[0_0_30px_rgba(37,99,235,0.6)]
+        hover:scale-105 hover:-translate-y-0.5
+        transition-all duration-300
+        overflow-hidden;
+    }
+
+    .btn-secondary {
+        @apply inline-flex items-center gap-2 px-6 py-3
+        text-base md:text-lg font-semibold text-white
+        bg-white/10 backdrop-blur-sm
+        border border-white/30
+        rounded-xl
+        hover:bg-white/20 hover:border-white/40
+        hover:scale-105
+        transition-all duration-300
+        shadow-lg;
+    }
+
+    .btn-shine {
+        @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent
+        -translate-x-full
+        transition-transform duration-1000;
+    }
+
+    .btn-primary:hover .btn-shine {
+        @apply translate-x-full;
+    }
+
+    .btn-arrow {
+        @apply relative w-4 h-4 md:w-5 md:h-5
+        transition-transform;
+    }
+
+    .btn-primary:hover .btn-arrow {
+        @apply translate-x-1;
+    }
+
+    .btn-icon {
+        @apply w-4 h-4 md:w-5 md:h-5;
+    }
+
+    /* Floating button container */
+    .floating-container {
+        @apply fixed bottom-6 md:bottom-8
+        left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8
+        z-40 w-[calc(100%-3rem)] md:w-auto;
+    }
+
+    /* Floating button styles - REMOVED group from @apply */
+    .btn-floating {
+        @apply relative flex items-center justify-center gap-2 w-full md:w-auto
+        bg-gradient-to-r from-brandBlue via-blue-600 to-brandBlue bg-[length:200%_100%]
+        text-white px-6 py-4 rounded-2xl
+        shadow-[0_8px_30px_rgba(59,130,246,0.5)]
+        hover:shadow-[0_12px_40px_rgba(59,130,246,0.6)]
+        font-bold text-base md:text-lg
+        transition-all duration-300 md:duration-500
+        active:scale-95 md:hover:scale-105 md:hover:-translate-y-1
+        border border-white/20 backdrop-blur-sm;
+    }
+
+    .btn-glow {
+        @apply absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400 to-blue-600 opacity-20 blur-xl;
+    }
+
+    .btn-glow-hover {
+        @apply absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 blur-xl transition-opacity duration-500;
+    }
+
+    /* Note: group-hover needs to be added separately */
+    .btn-floating:hover .btn-glow-hover {
+        @apply opacity-20;
+    }
+
+    .btn-icon-floating {
+        @apply w-5 h-5 md:w-6 md:h-6 relative z-10 transition-transform duration-300;
+    }
+
+    .btn-floating:hover .btn-icon-floating {
+        @apply md:rotate-12;
+    }
+}
+
+/* Navigation */
 .nav-link {
     position: relative;
     padding-bottom: 2px;
@@ -100,4 +194,38 @@
 
 .animate-gradient-shift {
     animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.7; }
+}
+.pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+[x-cloak] { display: none !important; }
+
+/* Subtle pulse animation for the floating button */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 35px rgba(59, 130, 246, 0.5);
+    }
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Smooth background gradient animation */
+.bg-\[length\:200\%_100\%\] {
+    background-size: 200% 100%;
+    transition: background-position 0.5s ease;
+}
+
+.hover\:bg-right-bottom:hover {
+    background-position: 100% 0;
 }

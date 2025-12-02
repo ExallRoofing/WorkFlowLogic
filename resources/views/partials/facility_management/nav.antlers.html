@@ -1,0 +1,32 @@
+<!-- Navigation -->
+<header
+    :class="[
+        'fixed top-0 left-0 w-full z-50 transition-all duration-300',
+        scrolled
+            ? 'backdrop-blur-md bg-gradient-to-r from-black/95 from-50% via-brandBlue/80 via-80% to-brandBlue/70 to-100% shadow-lg py-3'
+            : 'bg-transparent border-b-0 shadow-none py-4'
+    ]">
+
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-3 group">
+
+            <!-- Icon -->
+            <div class="w-8 h-8 flex items-center justify-center bg-brandBlue rounded-lg transition-transform group-hover:scale-110">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                     stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M4 6l8 6-8 6"></path>
+                    <line x1="14" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </div>
+
+            <!-- Gradient Text Logo -->
+            <span class="text-2xl font-bold bg-gradient-to-r from-white to-brandBlue bg-clip-text text-transparent">
+                WorkFlowLogic
+            </span>
+        </a>
+
+    </div>
+
+</header>
