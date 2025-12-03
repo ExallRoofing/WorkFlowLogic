@@ -1,67 +1,68 @@
+<!-- Trust Bar - Mobile Responsive -->
 <div class="w-full bg-white py-6 shadow-sm border-b">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
         <!-- Compact Stats Row -->
-        <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12">
 
             <!-- Label -->
             <p class="text-gray-600 text-sm uppercase tracking-wide font-semibold whitespace-nowrap">
                 Proven Results:
             </p>
 
-            <!-- Stats -->
-            <div class="flex items-center gap-6 md:gap-10">
+            <!-- Stats Grid - 4 columns on mobile, flex on desktop -->
+            <div class="grid grid-cols-4 md:flex md:items-center gap-3 md:gap-8 w-full md:w-auto">
 
-                <!-- Stat 1: Manual Tasks Eliminated -->
-                <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0">
-                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <!-- Stat 1: Tasks Automated -->
+                <div class="flex flex-col md:flex-row items-center md:gap-2">
+                    <div class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 mb-1 md:mb-0">
+                        <svg class="w-3 h-3 md:w-4 md:h-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
                         </svg>
                     </div>
-                    <div class="text-left">
-                        <p class="text-lg font-bold text-gray-900 leading-none">80%</p>
-                        <p class="text-xs text-gray-600">Tasks Automated</p>
+                    <div class="text-center md:text-left">
+                        <p class="text-sm md:text-lg font-bold text-gray-900 leading-none">80%</p>
+                        <p class="text-[10px] md:text-xs text-gray-600">Tasks</p>
                     </div>
                 </div>
 
-                <!-- Stat 2: Save Time -->
-                <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0">
-                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <!-- Stat 2: Time Saved -->
+                <div class="flex flex-col md:flex-row items-center md:gap-2">
+                    <div class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 mb-1 md:mb-0">
+                        <svg class="w-3 h-3 md:w-4 md:h-4 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <div class="text-left">
-                        <p class="text-lg font-bold text-gray-900 leading-none">10+ hrs</p>
-                        <p class="text-xs text-gray-600">Saved Weekly</p>
+                    <div class="text-center md:text-left">
+                        <p class="text-sm md:text-lg font-bold text-gray-900 leading-none">10+ hrs</p>
+                        <p class="text-[10px] md:text-xs text-gray-600">Weekly</p>
                     </div>
                 </div>
 
-                <!-- Stat 3: Save Money -->
-                <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0">
-                        <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <!-- Stat 3: Cost Reduction -->
+                <div class="flex flex-col md:flex-row items-center md:gap-2">
+                    <div class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0 mb-1 md:mb-0">
+                        <svg class="w-3 h-3 md:w-4 md:h-4 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <div class="text-left">
-                        <p class="text-lg font-bold text-gray-900 leading-none">40%</p>
-                        <p class="text-xs text-gray-600">Cost Reduction</p>
+                    <div class="text-center md:text-left">
+                        <p class="text-sm md:text-lg font-bold text-gray-900 leading-none">40%</p>
+                        <p class="text-[10px] md:text-xs text-gray-600">Savings</p>
                     </div>
                 </div>
 
                 <!-- Stat 4: Paperless -->
-                <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center flex-shrink-0">
-                        <svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <div class="flex flex-col md:flex-row items-center md:gap-2">
+                    <div class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-orange-50 flex items-center justify-center flex-shrink-0 mb-1 md:mb-0">
+                        <svg class="w-3 h-3 md:w-4 md:h-4 text-orange-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
                         </svg>
                     </div>
-                    <div class="text-left">
-                        <p class="text-lg font-bold text-gray-900 leading-none">100%</p>
-                        <p class="text-xs text-gray-600">Paperless</p>
+                    <div class="text-center md:text-left">
+                        <p class="text-sm md:text-lg font-bold text-gray-900 leading-none">100%</p>
+                        <p class="text-[10px] md:text-xs text-gray-600">Paperless</p>
                     </div>
                 </div>
 
