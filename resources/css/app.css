@@ -229,3 +229,104 @@
 .hover\:bg-right-bottom:hover {
     background-position: 100% 0;
 }
+
+@keyframes sweep {
+    0% {
+        transform: translateX(0) skewX(-12deg);
+    }
+    50% {
+        transform: translateX(200%) skewX(-12deg);
+    }
+    100% {
+        transform: translateX(0) skewX(-12deg);
+    }
+}
+
+.animate-dash {
+    stroke-dasharray: 5, 5;
+    animation: dash 20s linear infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: -1000;
+    }
+}
+
+@keyframes travel-path-1 {
+    0% { left: 10%; top: 20%; opacity: 0; }
+    5% { opacity: 1; }
+    25% { left: 25%; top: 15%; }
+    50% { left: 45%; top: 25%; }
+    75% { left: 65%; top: 20%; }
+    95% { opacity: 1; }
+    100% { left: 85%; top: 30%; opacity: 0; }
+}
+
+@keyframes travel-path-2 {
+    0% { left: 15%; top: 40%; opacity: 0; }
+    5% { opacity: 1; }
+    25% { left: 30%; top: 50%; }
+    50% { left: 50%; top: 45%; }
+    75% { left: 70%; top: 55%; }
+    95% { opacity: 1; }
+    100% { left: 90%; top: 50%; opacity: 0; }
+}
+
+@keyframes travel-path-3 {
+    0% { left: 20%; top: 70%; opacity: 0; }
+    5% { opacity: 1; }
+    33% { left: 35%; top: 75%; }
+    66% { left: 55%; top: 70%; }
+    95% { opacity: 1; }
+    100% { left: 75%; top: 80%; opacity: 0; }
+}
+
+/* Premium hover and focus effects */
+input:hover,
+textarea:hover {
+    transform: translateY(-1px);
+}
+
+input:focus,
+textarea:focus {
+    transform: translateY(-2px);
+}
+
+/* Button states for external JS */
+#submitBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+#submitBtn:disabled .btn-text {
+    opacity: 0;
+}
+
+#submitBtn:disabled .loader {
+    display: flex;
+}
+
+/* Message visibility (controlled externally) */
+#formMessage:not(.hidden),
+#formErrors:not(.hidden) {
+    display: flex;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gradient text effect */
+.bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+}
