@@ -330,3 +330,20 @@ textarea:focus {
     -webkit-background-clip: text;
     background-clip: text;
 }
+
+/* Premium pulsing loader animation */
+@keyframes pulse-loader {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
+/* Apply to dots if you want pulse instead of bounce */
+.loader .animate-pulse-loader {
+    animation: pulse-loader 1.5s ease-in-out infinite;
+}

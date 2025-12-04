@@ -86,43 +86,32 @@
                                 {{ captcha }}
                             </div>
 
-                            <!-- Submit button -->
+                            <!-- Submit button with btn-primary styling -->
                             <button
                                 id="submitBtn"
                                 type="submit"
-                                class="group relative bg-gradient-to-r from-blue-600 to-indigo-600
-                                       hover:from-blue-700 hover:to-indigo-700
-                                       text-white text-lg font-bold
-                                       py-4 px-12 rounded-xl
-                                       shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40
-                                       transition-all duration-300
-                                       flex items-center justify-center gap-3 overflow-hidden
-                                       w-full md:w-auto md:flex-1 md:max-w-xs md:ml-auto
-                                       hover:-translate-y-1 active:translate-y-0">
+                                class="group btn-primary w-full md:w-auto md:flex-1 md:max-w-xs md:ml-auto">
 
-                                <!-- Button text -->
-                                <span class="btn-text relative z-10 flex items-center gap-2">
+                                <!-- Shine effect (from btn-primary) -->
+                                <div class="btn-shine"></div>
+
+                                <!-- Button text - KEEP btn-text class for JavaScript -->
+                                <span class="btn-text relative z-10 flex items-center justify-center gap-2">
                                     Send Message
-                                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
-                                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                              d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                    <svg class="btn-arrow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                                     </svg>
                                 </span>
 
-                                <!-- Loader (overlay) -->
-                                <span class="loader absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 hidden">
-                                    <span class="flex items-center justify-center h-full gap-2">
-                                        <span class="dot w-2 h-2 bg-white rounded-full animate-bounce" style="animation-delay: 0ms"></span>
-                                        <span class="dot w-2 h-2 bg-white rounded-full animate-bounce" style="animation-delay: 150ms"></span>
-                                        <span class="dot w-2 h-2 bg-white rounded-full animate-bounce" style="animation-delay: 300ms"></span>
+                                <!-- Premium Loader (overlay) - Centered with spinner -->
+                                <span class="loader absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 hidden z-20 flex items-center justify-center">
+                                    <!-- Animated Dots -->
+                                    <span class="flex items-center justify-center gap-2">
+                                        <span class="w-2.5 h-2.5 bg-white rounded-full animate-pulse-loader" style="animation-delay: 0ms"></span>
+                                        <span class="w-2.5 h-2.5 bg-white rounded-full animate-pulse-loader" style="animation-delay: 150ms"></span>
+                                        <span class="w-2.5 h-2.5 bg-white rounded-full animate-pulse-loader" style="animation-delay: 300ms"></span>
                                     </span>
                                 </span>
-
-                                <!-- Shine effect on hover -->
-                                <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full
-                                            transition-transform duration-700 bg-gradient-to-r
-                                            from-transparent via-white/20 to-transparent skew-x-12"></div>
                             </button>
 
                         </div>
