@@ -1,4 +1,4 @@
-<!-- PREMIUM CONTACT FORM SECTION -->
+<!-- PREMIUM CONTACT FORM SECTION - Fixed Gray Corners -->
 <div id="contact" class="w-full py-10">
 
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,17 +15,17 @@
             </p>
         </div>
 
-        <!-- Form Card -->
-        <div class="relative overflow-hidden">
+        <!-- Form Card Wrapper -->
+        <div class="relative">
 
-            <!-- Decorative gradient blurs -->
-            <div class="absolute -top-24 -left-24 w-96 h-96 bg-gradient-to-br from-blue-200/40 to-purple-200/40
-                        rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-gradient-to-tl from-indigo-200/40 to-blue-200/40
-                        rounded-full blur-3xl pointer-events-none"></div>
+            <!-- Decorative gradient blurs - pushed further back -->
+            <div class="absolute -top-32 -left-32 w-[500px] h-[500px] bg-gradient-to-br from-blue-200/30 to-purple-200/30
+                        rounded-full blur-[100px] pointer-events-none -z-10"></div>
+            <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-gradient-to-tl from-indigo-200/30 to-blue-200/30
+                        rounded-full blur-[100px] pointer-events-none -z-10"></div>
 
             <!-- Main form container -->
-            <div class="relative bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-12">
+            <div class="relative bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-12 overflow-hidden">
 
                 {{ form:contact ajax="true" id="contactForm" redirect="false" class="space-y-8" }}
 
