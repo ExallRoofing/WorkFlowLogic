@@ -1,5 +1,4 @@
 import './bootstrap';
-
 document.getElementById("contactForm").addEventListener("submit", async function (e) {
     e.preventDefault();
 
@@ -19,7 +18,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
     // 🔵 Show loader
     submitBtn.disabled = true;
     loader.classList.remove("hidden");
-    btnText.classList.add("invisible"); // <-- not hidden; keeps layout stable
+    btnText.classList.add("invisible");
 
     const response = await fetch(form.action, {
         method: "POST",
@@ -32,15 +31,17 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
     const data = await response.json();
 
-    // 🟢 Success
+    // 🟢 Success - Show Modal
     if (data.success) {
-        formMessage.textContent = "Message sent successfully!";
         form.reset();
 
         // Reset button
         submitBtn.disabled = false;
         loader.classList.add("hidden");
         btnText.classList.remove("invisible");
+
+        // Show success modal with animation
+        showSuccessModal();
 
         return;
     }
@@ -64,6 +65,53 @@ document.getElementById("contactForm").addEventListener("submit", async function
     submitBtn.disabled = false;
     loader.classList.add("hidden");
     btnText.classList.remove("invisible");
+});
+
+// Modal Functions
+function showSuccessModal() {
+    const modal = document.getElementById("successModal");
+    const backdrop = document.getElementById("modalBackdrop");
+    const content = document.getElementById("modalContent");
+
+    // Show modal
+    modal.classList.remove("hidden");
+    document.body.classList.add("modal-open");
+
+    // Trigger animations
+    requestAnimationFrame(() => {
+        backdrop.classList.remove("opacity-0");
+        content.classList.remove("scale-95", "opacity-0");
+        content.classList.add("scale-100", "opacity-100");
+    });
+}
+
+function hideSuccessModal() {
+    const modal = document.getElementById("successModal");
+    const backdrop = document.getElementById("modalBackdrop");
+    const content = document.getElementById("modalContent");
+
+    // Reverse animations
+    backdrop.classList.add("opacity-0");
+    content.classList.add("scale-95", "opacity-0");
+    content.classList.remove("scale-100", "opacity-100");
+
+    // Hide after animation
+    setTimeout(() => {
+        modal.classList.add("hidden");
+        document.body.classList.remove("modal-open");
+    }, 300);
+}
+
+// Close modal event listeners
+document.getElementById("closeModal").addEventListener("click", hideSuccessModal);
+document.getElementById("closeModalX").addEventListener("click", hideSuccessModal);
+document.getElementById("modalBackdrop").addEventListener("click", hideSuccessModal);
+
+// Close on Escape key
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+        hideSuccessModal();
+    }
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
