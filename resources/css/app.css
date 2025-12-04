@@ -170,15 +170,38 @@
     display: inline-block;
 }
 
-/* Optional: Style the reCAPTCHA to match your design better */
+/* Style the reCAPTCHA to be smaller with no border */
 .g-recaptcha {
+    transform: scale(0.85);
     transform-origin: 0 0;
 }
 
-/* Responsive captcha scaling for mobile if needed */
+/* Remove border from reCAPTCHA iframe */
+.g-recaptcha iframe {
+    border: none !important;
+}
+
+/* Additional styling to remove any wrapper borders */
+.captcha {
+    border: none;
+    outline: none;
+}
+
+.captcha > div > div {
+    border: none !important;
+}
+
+/* Responsive captcha scaling for mobile */
 @media (max-width: 640px) {
     .g-recaptcha {
-        transform: scale(0.95);
+        transform: scale(0.75);
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .g-recaptcha {
+        transform: scale(0.65);
     }
 }
 
