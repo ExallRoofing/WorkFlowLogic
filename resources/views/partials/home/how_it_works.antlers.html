@@ -1,47 +1,162 @@
-<!-- HOW IT WORKS -->
-<section id="how-we-work" class="max-w-7xl mx-auto px-6 py-10">
-    <h2 class="text-4xl md:text-5xl text-center font-extrabold bg-gradient-to-r from-black from-5% via-[#135DFC] via-60% to-[#4c7dff] to-95% bg-clip-text text-transparent mb-16 mt-8">
-        How We Work
-    </h2>
+<!-- HOW IT WORKS - Simple Working Version -->
+<section id="how-we-work" class="max-w-7xl mx-auto px-6 py-10 relative overflow-hidden">
 
-    <div class="grid md:grid-cols-3 gap-10">
+    <!-- Simple background gradient overlay - no orbs, just clean gradient -->
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-50/30 via-purple-50/20 to-transparent pointer-events-none"></div>
 
-        <!-- Step 1 -->
-        <div class="bg-white p-8 rounded-2xl shadow-sm border text-center">
-            <div class="w-14 h-14 mx-auto mb-6 flex items-center justify-center bg-blue-600 text-white rounded-xl text-2xl font-bold">
-                1
+    <div class="relative z-10">
+        <div class="text-center mb-16">
+            <div class="inline-block px-4 py-2 bg-blue-50 rounded-full text-sm font-semibold text-blue-600 mb-4 border border-blue-100">
+                Simple Process
             </div>
-            <h3 class="text-xl font-semibold mb-3 text-gray-900">Free Workflow Audit</h3>
-            <p class="text-gray-600 leading-relaxed">
-                We review your business processes, tools, and bottlenecks to identify what can be automated.
+            <h2 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-black from-5% via-[#135DFC] via-60% to-[#4c7dff] to-95% bg-clip-text text-transparent mb-4">
+                How We Work
+            </h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                From discovery to deployment in three seamless steps
             </p>
         </div>
 
-        <!-- Step 2 -->
-        <div class="bg-white p-8 rounded-2xl shadow-sm border text-center">
-            <div class="w-14 h-14 mx-auto mb-6 flex items-center justify-center bg-blue-600 text-white rounded-xl text-2xl font-bold">
-                2
+        <div class="relative">
+            <!-- Connection Line - Desktop Only -->
+            <div class="hidden lg:block absolute top-24 left-0 right-0 h-0.5 pointer-events-none">
+                <div class="relative w-full h-full max-w-5xl mx-auto px-32">
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-blue-300 to-transparent"></div>
+                    <!-- Arrow 1 -->
+                    <div class="absolute left-1/3 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                        <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </div>
+                    <!-- Arrow 2 -->
+                    <div class="absolute left-2/3 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                        <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </div>
+                </div>
             </div>
-            <h3 class="text-xl font-semibold mb-3 text-gray-900">We Build Your Automations</h3>
-            <p class="text-gray-600 leading-relaxed">
-                We design and set up your workflows using Zapier, APIs, and integrations tailored to you.
-            </p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Step 1 -->
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-400 rounded-3xl blur-lg opacity-20 group-hover:opacity-30 transition duration-300"></div>
+                    <div class="relative bg-white p-8 rounded-3xl shadow-xl border border-gray-100 text-center hover:-translate-y-2 transition-all duration-300 h-full">
+
+                        <!-- Animated Icon Container -->
+                        <div class="relative w-20 h-20 mx-auto mb-6">
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
+                            <div class="relative flex items-center justify-center w-full h-full bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-2xl text-3xl font-bold shadow-lg">
+                                1
+                            </div>
+                        </div>
+
+                        <!-- Icon badge -->
+                        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-blue-50 rounded-xl group-hover:bg-blue-100 transition-colors">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                            </svg>
+                        </div>
+
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900">Free Workflow Audit</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            We review your business processes, tools, and bottlenecks to identify what can be automated.
+                        </p>
+
+                        <div class="flex items-center justify-center gap-2 text-sm flex-wrap">
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full font-semibold">30 minutes</span>
+                            <span class="px-3 py-1 bg-green-50 text-green-600 rounded-full font-semibold">Free</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl blur-lg opacity-20 group-hover:opacity-30 transition duration-300"></div>
+                    <div class="relative bg-white p-8 rounded-3xl shadow-xl border border-gray-100 text-center hover:-translate-y-2 transition-all duration-300 h-full">
+
+                        <!-- Animated Icon Container -->
+                        <div class="relative w-20 h-20 mx-auto mb-6">
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
+                            <div class="relative flex items-center justify-center w-full h-full bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-2xl text-3xl font-bold shadow-lg">
+                                2
+                            </div>
+                        </div>
+
+                        <!-- Icon badge -->
+                        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-purple-50 rounded-xl group-hover:bg-purple-100 transition-colors">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900">We Automate It</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            We design and set up your workflows using Zapier, APIs, and integrations tailored to you.
+                        </p>
+
+                        <div class="flex items-center justify-center gap-2 text-sm flex-wrap">
+                            <span class="px-3 py-1 bg-purple-50 text-purple-600 rounded-full font-semibold">Custom built</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full font-semibold">Tailored</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gradient-to-r from-green-600 to-blue-600 rounded-3xl blur-lg opacity-20 group-hover:opacity-30 transition duration-300"></div>
+                    <div class="relative bg-white p-8 rounded-3xl shadow-xl border border-gray-100 text-center hover:-translate-y-2 transition-all duration-300 h-full">
+
+                        <!-- Animated Icon Container -->
+                        <div class="relative w-20 h-20 mx-auto mb-6">
+                            <div class="absolute inset-0 bg-gradient-to-br from-green-600 to-blue-600 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
+                            <div class="relative flex items-center justify-center w-full h-full bg-gradient-to-br from-green-600 to-blue-600 text-white rounded-2xl text-3xl font-bold shadow-lg">
+                                3
+                            </div>
+                        </div>
+
+                        <!-- Icon badge -->
+                        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-green-50 rounded-xl group-hover:bg-green-100 transition-colors">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900">Save Hours Every Week</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Your automations run 24/7—cut admin time, reduce errors, and free up resources instantly.
+                        </p>
+
+                        <div class="flex items-center justify-center gap-2 text-sm flex-wrap">
+                            <span class="px-3 py-1 bg-green-50 text-green-600 rounded-full font-semibold">24/7</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full font-semibold">Instant ROI</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <!-- Step 3 -->
-        <div class="bg-white p-8 rounded-2xl shadow-sm border text-center">
-            <div class="w-14 h-14 mx-auto mb-6 flex items-center justify-center bg-blue-600 text-white rounded-xl text-2xl font-bold">
-                3
+        <!-- Stats Bar - Polished -->
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="group text-center p-8 bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-xl hover:border-blue-300 transition-all duration-300">
+                <div class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent mb-3">20+</div>
+                <div class="text-gray-700 font-semibold text-lg">Hours Saved Weekly</div>
             </div>
-            <h3 class="text-xl font-semibold mb-3 text-gray-900">Save Hours Every Week</h3>
-            <p class="text-gray-600 leading-relaxed">
-                Your automations run 24/7—cut admin time, reduce errors, and free up resources instantly.
-            </p>
+            <div class="group text-center p-8 bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-xl hover:border-blue-300 transition-all duration-300">
+                <div class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#135DFC] to-[#4c7dff] bg-clip-text text-transparent mb-3">95%</div>
+                <div class="text-gray-700 font-semibold text-lg">Error Reduction</div>
+            </div>
+            <div class="group text-center p-8 bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-xl hover:border-blue-300 transition-all duration-300">
+                <div class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-600 to-[#135DFC] bg-clip-text text-transparent mb-3">24/7</div>
+                <div class="text-gray-700 font-semibold text-lg">Automated Operations</div>
+            </div>
         </div>
-
     </div>
 
     <!-- Separator -->
-    <div class="w-full h-1 bg-gradient-to-r from-blue-600/20 via-blue-600/60 to-blue-600/20 rounded-full my-16"></div>
+    <div class="w-full h-1 bg-gradient-to-r from-transparent via-blue-600/40 to-transparent rounded-full mt-20"></div>
 
 </section>

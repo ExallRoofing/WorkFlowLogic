@@ -1,25 +1,51 @@
-<!-- What we automate -->
-<section id="what-we-automate" class="max-w-7xl mx-auto px-6">
+<!-- WHAT WE AUTOMATE - Enhanced Premium & Colorful -->
+<section id="what-we-automate" class="max-w-7xl mx-auto px-6 py-10 relative">
+
+    <!-- Animated Gradient Orbs Background -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-300/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+        <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-300/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-1/4 left-1/2 w-96 h-96 bg-indigo-300/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+    </div>
+
     {{ collection:what_we_automate limit="1" }}
-    <h1 class="text-center text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-black from-5% via-[#135DFC] via-60% to-[#4c7dff] to-95% bg-clip-text text-transparent mb-16">
-        {{ title }}
-    </h1>
-    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div class="text-center mb-16 relative z-10">
+        <div class="inline-block px-4 py-2 bg-blue-50 rounded-full text-sm font-semibold text-blue-600 mb-4 border border-blue-100">
+            Your Business on Autopilot
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-black from-5% via-[#135DFC] via-60% to-[#4c7dff] to-95% bg-clip-text text-transparent mb-4">
+            {{ title }}
+        </h1>
+        <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+            Streamline every aspect of your business with intelligent automation
+        </p>
+    </div>
+
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
 
         {{ automation_list }}
         {{ if type == "item" }}
 
-        <li class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition text-center">
+        <li class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 hover:border-blue-300 overflow-hidden">
 
-            <!-- Icon -->
-            <div class="w-12 h-12 mb-4 flex items-center justify-center text-blue-600 rounded-lg mx-auto">
-                <img src="{{ icon }}" loading="lazy" decoding="async" width="80" height="63">
+            <!-- Colorful gradient overlay on hover -->
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-purple-50/50 to-indigo-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+            <!-- Content -->
+            <div class="relative z-10">
+                <!-- Icon Container with enhanced colors -->
+                <div class="w-18 h-18 mx-auto mb-6 flex items-center justify-center bg-gradient-to-br from-blue-100 via-purple-100 to-indigo-100 rounded-2xl group-hover:from-blue-200 group-hover:via-purple-200 group-hover:to-indigo-200 group-hover:scale-110 transition-all duration-300 shadow-md group-hover:shadow-lg">
+                    <img src="{{ icon }}" loading="lazy" decoding="async" width="44" height="44" alt="{{ title }}" class="w-11 h-11 object-contain">
+                </div>
+
+                <!-- Title -->
+                <h3 class="font-bold text-gray-900 text-lg leading-snug text-center group-hover:text-blue-600 transition-colors duration-300">
+                    {{ title }}
+                </h3>
             </div>
 
-            <!-- Title -->
-            <h3 class="font-semibold text-gray-800 text-lg leading-snug">
-                {{ title }}
-            </h3>
+            <!-- Accent corner element -->
+            <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-200/20 via-purple-200/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
         </li>
 
@@ -29,7 +55,28 @@
     </ul>
     {{ /collection:what_we_automate }}
 
-<!-- Separator -->
-<div class="w-full h-1 bg-gradient-to-r from-blue-600/20 via-blue-600/60 to-blue-600/20 rounded-full my-16"></div>
+    <!-- CTA Box -->
+    <div class="mt-16 bg-gradient-to-br from-white to-gray-50 rounded-2xl p-10 md:p-12 text-center border-2 border-gray-200 shadow-lg relative z-10">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Don't See What You Need?
+        </h3>
+        <p class="text-gray-600 text-lg mb-6 max-w-2xl mx-auto">
+            We automate almost anything. Let's discuss your unique workflow and create a custom solution.
+        </p>
+        <a href="#"
+           data-cal-config='{"layout":"month_view"}'
+           data-cal-namespace="30min"
+           data-cal-link="workflowlogic/30min"
+           class="group btn-primary">
+            <div class="btn-shine"></div>
+            <span class="relative">{{ hero_cta_button_text }}</span>
+            <svg class="btn-arrow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Separator -->
+    <div class="w-full h-1 bg-gradient-to-r from-transparent via-blue-600/40 to-transparent rounded-full mt-20"></div>
 
 </section>
